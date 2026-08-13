@@ -84,6 +84,7 @@ public class InterrogationRoomBuilder : EditorWindow
         Material darkMetalMat = CreateSimpleMaterial("Mat_DarkMetal", new Color(0.15f, 0.16f, 0.18f));
         Material glassMat = CreateGlassMaterial("Mat_OneWayMirror", new Color(0.08f, 0.12f, 0.15f, 0.85f));
         Material ceilingMat = CreateSimpleMaterial("Mat_CeilingDark", new Color(0.14f, 0.15f, 0.18f));
+        Material baseboardMat = CreateSimpleMaterial("Mat_Baseboard", new Color(0.1f, 0.1f, 0.12f));
 
         // 4. Root Container
         GameObject roomRoot = new GameObject("--- INTERROGATION ROOM ---");
@@ -210,6 +211,63 @@ public class InterrogationRoomBuilder : EditorWindow
         Collider frameCol = mirrorFrame.GetComponent<Collider>();
         if (frameCol != null) DestroyImmediate(frameCol);
 
+        // --- POLISH ARCHITECTURE: Baseboards (Plin Lantai) ---
+        float baseH = 0.15f;
+        float baseD = 0.04f;
+        
+        GameObject plinFront = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        plinFront.name = "Baseboard_Front";
+        plinFront.transform.SetParent(structRoot.transform);
+        plinFront.transform.position = new Vector3(0, baseH * 0.5f, roomL * 0.5f - baseD * 0.5f);
+        plinFront.transform.localScale = new Vector3(roomW, baseH, baseD);
+        plinFront.GetComponent<Renderer>().sharedMaterial = baseboardMat;
+
+        GameObject plinBackL = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        plinBackL.name = "Baseboard_Back_L";
+        plinBackL.transform.SetParent(structRoot.transform);
+        plinBackL.transform.position = new Vector3(-(roomW * 0.5f - sideWallW * 0.5f), baseH * 0.5f, -roomL * 0.5f + baseD * 0.5f);
+        plinBackL.transform.localScale = new Vector3(sideWallW, baseH, baseD);
+        plinBackL.GetComponent<Renderer>().sharedMaterial = baseboardMat;
+
+        GameObject plinBackR = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        plinBackR.name = "Baseboard_Back_R";
+        plinBackR.transform.SetParent(structRoot.transform);
+        plinBackR.transform.position = new Vector3((roomW * 0.5f - sideWallW * 0.5f), baseH * 0.5f, -roomL * 0.5f + baseD * 0.5f);
+        plinBackR.transform.localScale = new Vector3(sideWallW, baseH, baseD);
+        plinBackR.GetComponent<Renderer>().sharedMaterial = baseboardMat;
+
+        GameObject plinRight = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        plinRight.name = "Baseboard_Right";
+        plinRight.transform.SetParent(structRoot.transform);
+        plinRight.transform.position = new Vector3(roomW * 0.5f - baseD * 0.5f, baseH * 0.5f, 0);
+        plinRight.transform.localScale = new Vector3(baseD, baseH, roomL);
+        plinRight.GetComponent<Renderer>().sharedMaterial = baseboardMat;
+
+        GameObject plinLeft = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        plinLeft.name = "Baseboard_Left";
+        plinLeft.transform.SetParent(structRoot.transform);
+        plinLeft.transform.position = new Vector3(-roomW * 0.5f + baseD * 0.5f, baseH * 0.5f, 0);
+        plinLeft.transform.localScale = new Vector3(baseD, baseH, roomL);
+        plinLeft.GetComponent<Renderer>().sharedMaterial = baseboardMat;
+
+        // --- POLISH ARCHITECTURE: Corner Pillars ---
+        float pillarSize = 0.3f;
+        Vector3[] pillarPositions = new Vector3[] {
+            new Vector3(-roomW * 0.5f + pillarSize * 0.5f, roomH * 0.5f, -roomL * 0.5f + pillarSize * 0.5f),
+            new Vector3(roomW * 0.5f - pillarSize * 0.5f, roomH * 0.5f, -roomL * 0.5f + pillarSize * 0.5f),
+            new Vector3(roomW * 0.5f - pillarSize * 0.5f, roomH * 0.5f, roomL * 0.5f - pillarSize * 0.5f),
+            new Vector3(-roomW * 0.5f + pillarSize * 0.5f, roomH * 0.5f, roomL * 0.5f - pillarSize * 0.5f)
+        };
+        for (int i = 0; i < 4; i++)
+        {
+            GameObject pillar = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            pillar.name = "Corner_Pillar_" + i;
+            pillar.transform.SetParent(structRoot.transform);
+            pillar.transform.position = pillarPositions[i];
+            pillar.transform.localScale = new Vector3(pillarSize, roomH, pillarSize);
+            pillar.GetComponent<Renderer>().sharedMaterial = baseboardMat;
+        }
+
         // Pintu Masuk
         GameObject doorPrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Low Poly Furniture 2/Doors/Door A.fbx");
         if (doorPrefab != null)
@@ -278,16 +336,21 @@ public class InterrogationRoomBuilder : EditorWindow
             lamp.transform.position = new Vector3(0.55f, 0.76f, 0.2f);
             lamp.transform.rotation = Quaternion.Euler(0, -135, 0);
 
-            // Lampu sorot kecil dari desk lamp
-            GameObject deskLightGo = new GameObject("Lamp_Light");
-            deskLightGo.transform.SetParent(lamp.transform);
-            deskLightGo.transform.localPosition = new Vector3(0, 0.4f, 0.15f);
-            Light deskLight = deskLightGo.AddComponent<Light>();
-            deskLight.type = LightType.Point;
-            deskLight.color = new Color(1.0f, 0.85f, 0.6f);
-            deskLight.intensity = 1.2f;
-            deskLight.range = 2.0f;
-            deskLight.shadows = LightShadows.Soft;
+            // Polish: Add Spotlight to Desk Lamp aiming at suspect
+            GameObject lampSpot = new GameObject("Desk_Lamp_Spotlight");
+            lampSpot.transform.SetParent(lamp.transform);
+            lampSpot.transform.localPosition = new Vector3(0.12f, 0.3f, 0);
+            lampSpot.transform.localRotation = Quaternion.Euler(30, -90, 0);
+
+            Light dl = lampSpot.AddComponent<Light>();
+            dl.type = LightType.Spot;
+            dl.color = new Color(1.0f, 0.85f, 0.7f); // Warm tungsten
+            dl.intensity = 3.5f;
+            dl.range = 4.0f;
+            dl.spotAngle = 50f;
+            dl.innerSpotAngle = 30f;
+            dl.shadows = LightShadows.Soft;
+            dl.shadowStrength = 0.8f;
         }
 
         // Berkas Kasus (Books)
@@ -402,6 +465,18 @@ public class InterrogationRoomBuilder : EditorWindow
         fillLight.intensity = 0.45f;
         fillLight.range = 9.0f;
         fillLight.shadows = LightShadows.None;
+
+        // 3. Polish: Observation Room Light (Cahaya dari balik kaca)
+        GameObject obsLightGo = new GameObject("Observation_Room_Light");
+        obsLightGo.transform.SetParent(lightsRoot.transform);
+        obsLightGo.transform.position = new Vector3(-roomW * 0.5f - 1.5f, 1.8f, 0); // Di luar jendela
+
+        Light obsLight = obsLightGo.AddComponent<Light>();
+        obsLight.type = LightType.Point;
+        obsLight.color = new Color(0.1f, 0.4f, 0.6f); // Cyan/Blue observation tint
+        obsLight.intensity = 2.5f;
+        obsLight.range = 6.0f;
+        obsLight.shadows = LightShadows.None;
 
         // ==================== F. DETECTIVE PLAYER (MC) ====================
         GameObject playerGo = new GameObject("Player");

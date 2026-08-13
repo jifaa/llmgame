@@ -528,12 +528,17 @@ public class CityBuilder : EditorWindow
     {
         float edge = innerSize * 0.5f;
         float setback = 1.0f; // Mundur 1 meter dari tepi curb
+        float spread = edge * 0.55f; // Jarak antar gedung
+
+        // North & South: 3 buildings each
+        for (int i = -1; i <= 1; i++) {
+            SpawnBuildingAtEdge(commercialBuildings, center + new Vector3(i * spread, 0, edge - setback), 180f, parent);
+            SpawnBuildingAtEdge(commercialBuildings, center + new Vector3(i * spread, 0, -edge + setback), 0f, parent);
+        }
         
-        // Frontages (4 sisi menghadap jalan)
-        SpawnBuildingAtEdge(commercialBuildings, center + new Vector3(0, 0, edge - setback), 180f, parent); // North edge, faces North
-        SpawnBuildingAtEdge(commercialBuildings, center + new Vector3(0, 0, -edge + setback), 0f, parent); // South edge, faces South
-        SpawnBuildingAtEdge(commercialBuildings, center + new Vector3(edge - setback, 0, 0), -90f, parent); // East edge, faces East
-        SpawnBuildingAtEdge(commercialBuildings, center + new Vector3(-edge + setback, 0, 0), 90f, parent); // West edge, faces West
+        // East & West: 1 building each in the middle
+        SpawnBuildingAtEdge(commercialBuildings, center + new Vector3(edge - setback, 0, 0), -90f, parent);
+        SpawnBuildingAtEdge(commercialBuildings, center + new Vector3(-edge + setback, 0, 0), 90f, parent);
 
         if (addParkedVehicles)
         {
@@ -543,6 +548,7 @@ public class CityBuilder : EditorWindow
         
         // Props (Meja Kafe / Kios)
         SpawnPrefabList(streetProps, center + new Vector3(edge - 4f, curbHeight, edge - 4f), Quaternion.identity, propsParent);
+        SpawnPrefabList(streetProps, center + new Vector3(-edge + 4f, curbHeight, -edge + 4f), Quaternion.identity, propsParent);
     }
 
     void BuildCentralPark(Vector3 center, float innerSize, Transform parent, Transform natureParent, Transform propsParent)
@@ -560,12 +566,13 @@ public class CityBuilder : EditorWindow
         {
             // Pohon besar di tengah
             SpawnPrefabList(natureTrees, center + new Vector3(0, curbHeight, 0), Quaternion.identity, natureParent);
-            // Pohon melingkar
+            // Pohon melingkar lebih padat
             float d = innerSize * 0.35f;
-            Vector3[] pos = { new Vector3(d,0,d), new Vector3(-d,0,d), new Vector3(d,0,-d), new Vector3(-d,0,-d) };
+            Vector3[] pos = { new Vector3(d,0,d), new Vector3(-d,0,d), new Vector3(d,0,-d), new Vector3(-d,0,-d),
+                              new Vector3(d,0,0), new Vector3(-d,0,0), new Vector3(0,0,d), new Vector3(0,0,-d) };
             foreach (var p in pos) {
                 SpawnPrefabList(natureTrees, center + p + new Vector3(0, curbHeight, 0), Quaternion.identity, natureParent);
-                SpawnPrefabList(parkProps, center + p * 0.8f + new Vector3(0, curbHeight, 0), Quaternion.identity, propsParent); // Bangku
+                SpawnPrefabList(parkProps, center + p * 0.7f + new Vector3(0, curbHeight, 0), Quaternion.identity, propsParent); // Bangku
             }
         }
     }
@@ -573,68 +580,86 @@ public class CityBuilder : EditorWindow
     void BuildCivicDistrict(Vector3 center, float innerSize, Transform parent, Transform vehiclesParent)
     {
         float edge = innerSize * 0.5f;
-        // 1 Bangunan layanan publik besar di utara
+        // 1 Bangunan layanan publik besar di utara, 1 di selatan
         SpawnBuildingAtEdge(civicBuildings, center + new Vector3(0, 0, edge - 2f), 180f, parent);
+        SpawnBuildingAtEdge(civicBuildings, center + new Vector3(0, 0, -edge + 2f), 0f, parent);
         
-        // Area parkir luas di depan (selatan)
+        // Area parkir luas di tengah
         if (addParkedVehicles)
         {
-            SpawnPrefabList(civicVehicles, center + new Vector3(-4f, 0, -edge + 4f), Quaternion.Euler(0, 180, 0), vehiclesParent);
-            SpawnPrefabList(civicVehicles, center + new Vector3(4f, 0, -edge + 4f), Quaternion.Euler(0, 180, 0), vehiclesParent);
+            SpawnPrefabList(civicVehicles, center + new Vector3(-6f, 0, 0), Quaternion.Euler(0, 90, 0), vehiclesParent);
+            SpawnPrefabList(civicVehicles, center + new Vector3(6f, 0, 0), Quaternion.Euler(0, -90, 0), vehiclesParent);
         }
     }
 
     void BuildResidentialDistrict(Vector3 center, float innerSize, Transform parent, Transform natureParent, Transform vehiclesParent)
     {
         float edge = innerSize * 0.5f;
-        float d = innerSize * 0.25f;
+        float d = innerSize * 0.3f;
+        float spread = edge * 0.5f;
 
-        // 4 Rumah di 4 kuadran, menghadap jalan luar
-        SpawnBuildingAtEdge(residentialBuildings, center + new Vector3(-d, 0, edge - 1f), 180f, parent); // Kiri-Atas hadap Utara
-        SpawnBuildingAtEdge(residentialBuildings, center + new Vector3(d, 0, edge - 1f), 180f, parent);  // Kanan-Atas hadap Utara
-        SpawnBuildingAtEdge(residentialBuildings, center + new Vector3(-d, 0, -edge + 1f), 0f, parent);  // Kiri-Bawah hadap Selatan
-        SpawnBuildingAtEdge(residentialBuildings, center + new Vector3(d, 0, -edge + 1f), 0f, parent);   // Kanan-Bawah hadap Selatan
+        // 3 Rumah menghadap Utara, 3 menghadap Selatan
+        for (int i = -1; i <= 1; i++) {
+            SpawnBuildingAtEdge(residentialBuildings, center + new Vector3(i * spread, 0, edge - 1f), 180f, parent);
+            SpawnBuildingAtEdge(residentialBuildings, center + new Vector3(i * spread, 0, -edge + 1f), 0f, parent);
+        }
+
+        // 2 Rumah menghadap Timur, 2 menghadap Barat
+        SpawnBuildingAtEdge(residentialBuildings, center + new Vector3(edge - 1f, 0, spread * 0.5f), -90f, parent);
+        SpawnBuildingAtEdge(residentialBuildings, center + new Vector3(edge - 1f, 0, -spread * 0.5f), -90f, parent);
+        SpawnBuildingAtEdge(residentialBuildings, center + new Vector3(-edge + 1f, 0, spread * 0.5f), 90f, parent);
+        SpawnBuildingAtEdge(residentialBuildings, center + new Vector3(-edge + 1f, 0, -spread * 0.5f), 90f, parent);
 
         if (addTreesAndNature)
         {
-            SpawnPrefabList(natureTrees, center + new Vector3(-d, curbHeight, 0), Quaternion.identity, natureParent);
-            SpawnPrefabList(natureTrees, center + new Vector3(d, curbHeight, 0), Quaternion.identity, natureParent);
+            SpawnPrefabList(natureTrees, center + new Vector3(0, curbHeight, 0), Quaternion.identity, natureParent); // Pohon tengah
         }
 
         if (addParkedVehicles)
         {
-            // Mobil parkir di driveway rumah (halaman depan)
-            SpawnPrefabList(civilianVehicles, center + new Vector3(-d + 2f, 0, edge - 6f), Quaternion.identity, vehiclesParent);
-            SpawnPrefabList(civilianVehicles, center + new Vector3(d + 2f, 0, -edge + 6f), Quaternion.Euler(0, 180, 0), vehiclesParent);
+            SpawnPrefabList(civilianVehicles, center + new Vector3(-spread, 0, edge - 6f), Quaternion.identity, vehiclesParent);
+            SpawnPrefabList(civilianVehicles, center + new Vector3(spread, 0, -edge + 6f), Quaternion.Euler(0, 180, 0), vehiclesParent);
         }
     }
 
     void BuildIndustrialDistrict(Vector3 center, float innerSize, Transform parent, Transform vehiclesParent)
     {
         float edge = innerSize * 0.5f;
-        SpawnBuildingAtEdge(industrialBuildings, center + new Vector3(0, 0, -edge + 2f), 0f, parent); // Pabrik menghadap selatan
+        float spread = edge * 0.5f;
         
-        // Tumpukan boks logistik
-        SpawnPrefabList(streetProps, center + new Vector3(edge - 6f, curbHeight, edge - 6f), Quaternion.Euler(0, 45, 0), parent);
+        // 2 Pabrik Utara, 2 Pabrik Selatan
+        SpawnBuildingAtEdge(industrialBuildings, center + new Vector3(-spread, 0, edge - 2f), 180f, parent);
+        SpawnBuildingAtEdge(industrialBuildings, center + new Vector3(spread, 0, edge - 2f), 180f, parent);
+        SpawnBuildingAtEdge(industrialBuildings, center + new Vector3(-spread, 0, -edge + 2f), 0f, parent);
+        SpawnBuildingAtEdge(industrialBuildings, center + new Vector3(spread, 0, -edge + 2f), 0f, parent);
+        
+        // Tumpukan boks logistik di tengah
+        SpawnPrefabList(streetProps, center, Quaternion.Euler(0, 45, 0), parent);
+        SpawnPrefabList(streetProps, center + new Vector3(2f, 0, 2f), Quaternion.Euler(0, 15, 0), parent);
         
         if (addParkedVehicles)
         {
             SpawnPrefabList(civilianVehicles, center + new Vector3(edge + 2f, 0, 0), Quaternion.Euler(0, 90, 0), vehiclesParent);
+            SpawnPrefabList(civilianVehicles, center + new Vector3(-edge - 2f, 0, 0), Quaternion.Euler(0, -90, 0), vehiclesParent);
         }
     }
 
     void BuildHighRiseDistrict(Vector3 center, float innerSize, Transform parent, Transform natureParent)
     {
-        // 1-2 Gedung pencakar langit
-        SpawnBuildingAtEdge(highRiseBuildings, center, 0f, parent);
+        float d = innerSize * 0.25f;
+        // 4 Gedung pencakar langit dalam formasi grid 2x2
+        SpawnBuildingAtEdge(highRiseBuildings, center + new Vector3(-d, 0, d), 180f, parent);
+        SpawnBuildingAtEdge(highRiseBuildings, center + new Vector3(d, 0, d), 180f, parent);
+        SpawnBuildingAtEdge(highRiseBuildings, center + new Vector3(-d, 0, -d), 0f, parent);
+        SpawnBuildingAtEdge(highRiseBuildings, center + new Vector3(d, 0, -d), 0f, parent);
         
         if (addTreesAndNature)
         {
-            float d = innerSize * 0.4f;
-            SpawnPrefabList(natureBushes, center + new Vector3(d, curbHeight, d), Quaternion.identity, natureParent);
-            SpawnPrefabList(natureBushes, center + new Vector3(-d, curbHeight, d), Quaternion.identity, natureParent);
-            SpawnPrefabList(natureBushes, center + new Vector3(d, curbHeight, -d), Quaternion.identity, natureParent);
-            SpawnPrefabList(natureBushes, center + new Vector3(-d, curbHeight, -d), Quaternion.identity, natureParent);
+            float bushD = innerSize * 0.45f;
+            SpawnPrefabList(natureBushes, center + new Vector3(bushD, curbHeight, bushD), Quaternion.identity, natureParent);
+            SpawnPrefabList(natureBushes, center + new Vector3(-bushD, curbHeight, bushD), Quaternion.identity, natureParent);
+            SpawnPrefabList(natureBushes, center + new Vector3(bushD, curbHeight, -bushD), Quaternion.identity, natureParent);
+            SpawnPrefabList(natureBushes, center + new Vector3(-bushD, curbHeight, -bushD), Quaternion.identity, natureParent);
         }
     }
 
