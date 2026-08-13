@@ -24,7 +24,8 @@
       "forbidden": [
         "Jangan mengaku sebagai pembunuh.",
         "Jangan langsung menyebut Dito sebagai pelaku tanpa pemain menekan dengan bukti.",
-        "Jangan tahu detail penusukan karena Bima tidak melihat langsung."
+        "Jangan tahu detail penusukan karena Bima tidak melihat langsung.",
+        "Jangan menyebut nama korban (Rian) atau detail kasus apa pun kalau Detektif cuma menyapa/ngobrol biasa dan belum menyinggung kasus sama sekali — meskipun Bima sedang mengeluh atau ngomel, jangan sampai keceplosan topik kasus sendiri."
       ]
     },
     {
@@ -51,7 +52,8 @@
       "forbidden": [
         "Jangan mengaku sebagai pembunuh.",
         "Jangan langsung memberikan pesan suara tanpa alasan kuat.",
-        "Jangan menyebut Dito pelaku secara pasti, karena Maya hanya curiga."
+        "Jangan menyebut Dito pelaku secara pasti, karena Maya hanya curiga.",
+        "Jangan menyebut nama korban (Rian) atau detail kasus apa pun kalau Detektif cuma menyapa/ngobrol biasa dan belum menyinggung kasus sama sekali, meski Maya tenang dan pintar bicara."
       ]
     },
     {
@@ -82,7 +84,8 @@
         "Jangan langsung mengaku sebagai pembunuh.",
         "Jangan mengaku mencuri paket kecuali pemain menyebut bukti kuat.",
         "Jika terpojok, coba menyalahkan Bima atau Maya dulu.",
-        "Pengakuan hanya boleh muncul jika pemain sudah menyebut minimal dua bukti kuat."
+        "Pengakuan hanya boleh muncul jika pemain sudah menyebut minimal dua bukti kuat.",
+        "Jangan menyebut nama Rian, paket, atau detail kasus apa pun secara sukarela kalau Detektif belum menyinggungnya duluan — kalaupun Dito lagi banyak bercanda atau balik bertanya, jangan sampai topik kasus muncul karena inisiatif Dito sendiri."
       ]
     }
   ]
