@@ -1,0 +1,897 @@
+{
+  "Assets/AIServer/server.py": {
+    "mtime": 1788086939.453482,
+    "ast_hash": "7f187422e6fa8064e890dee3272855aa",
+    "semantic_hash": "7f187422e6fa8064e890dee3272855aa"
+  },
+  "Assets/DavidJalbert/LowPolyPeople/Example/Scripts/AnimationController.cs": {
+    "mtime": 1705453582.0,
+    "ast_hash": "86c28c97e2cddebf2b08f854708c82e3",
+    "semantic_hash": "86c28c97e2cddebf2b08f854708c82e3"
+  },
+  "Assets/Editor/CityBuilder.cs": {
+    "mtime": 1786593235.3722541,
+    "ast_hash": "cffca734649237a5eec59bd4d7cb1882",
+    "semantic_hash": "cffca734649237a5eec59bd4d7cb1882"
+  },
+  "Assets/Editor/InterrogationRoomBuilder.cs": {
+    "mtime": 1786592868.8157701,
+    "ast_hash": "d8a4614c2b96014daa2d15b4dd9eed99",
+    "semantic_hash": "d8a4614c2b96014daa2d15b4dd9eed99"
+  },
+  "Assets/Editor/MainMenuBuilder.cs": {
+    "mtime": 1786569560.9025943,
+    "ast_hash": "eb32199ad9ba440e2231d8376fdbd03e",
+    "semantic_hash": "eb32199ad9ba440e2231d8376fdbd03e"
+  },
+  "Assets/Editor/OfficeRoomBuilder.cs": {
+    "mtime": 1788073847.4409957,
+    "ast_hash": "28402c938c668d38b6702c5569d9bf4f",
+    "semantic_hash": "28402c938c668d38b6702c5569d9bf4f"
+  },
+  "Assets/Script/AIChatClient.cs": {
+    "mtime": 1788086934.268211,
+    "ast_hash": "5c8bfc40b39add3846331c7f24edb514",
+    "semantic_hash": "5c8bfc40b39add3846331c7f24edb514"
+  },
+  "Assets/Script/AIDataLoader.cs": {
+    "mtime": 1778059592.010974,
+    "ast_hash": "f8b275494c4b7baf52c96f2d7c463ed3",
+    "semantic_hash": "f8b275494c4b7baf52c96f2d7c463ed3"
+  },
+  "Assets/Script/ButtonHoverEffect.cs": {
+    "mtime": 1786569542.587528,
+    "ast_hash": "4b26c5deaaf523f8ee1239ea47e47a1b",
+    "semantic_hash": "4b26c5deaaf523f8ee1239ea47e47a1b"
+  },
+  "Assets/Script/ChatUI.cs": {
+    "mtime": 1788076273.2678368,
+    "ast_hash": "0865d9d6778fb4c4b80446c59a897f00",
+    "semantic_hash": "0865d9d6778fb4c4b80446c59a897f00"
+  },
+  "Assets/Script/EvidenceItem.cs": {
+    "mtime": 1778050961.332041,
+    "ast_hash": "06e959a2c1e1dfd562ef7380de190e06",
+    "semantic_hash": "06e959a2c1e1dfd562ef7380de190e06"
+  },
+  "Assets/Script/EvidenceManager.cs": {
+    "mtime": 1778050987.0019383,
+    "ast_hash": "69daef9c75c5ef70816d793b9762ee61",
+    "semantic_hash": "69daef9c75c5ef70816d793b9762ee61"
+  },
+  "Assets/Script/FirstPerson.cs": {
+    "mtime": 1786580699.8240912,
+    "ast_hash": "5ba561f8e3d3b1e9c905ab38bdb9307e",
+    "semantic_hash": "5ba561f8e3d3b1e9c905ab38bdb9307e"
+  },
+  "Assets/Script/MainMenuManager.cs": {
+    "mtime": 1786569537.2254353,
+    "ast_hash": "47b18fb1a48c8cd5010f4ba26ffe6f63",
+    "semantic_hash": "47b18fb1a48c8cd5010f4ba26ffe6f63"
+  },
+  "Assets/Script/NPCBrainTest.cs": {
+    "mtime": 1786568777.6414511,
+    "ast_hash": "ff8685830fb8d74381462ee82b9d536f",
+    "semantic_hash": "ff8685830fb8d74381462ee82b9d536f"
+  },
+  "Assets/Script/NPCInteraction.cs": {
+    "mtime": 1778051055.9150658,
+    "ast_hash": "ec287c7c54aad4b520c9611003b3053f",
+    "semantic_hash": "ec287c7c54aad4b520c9611003b3053f"
+  },
+  "Assets/Script/TKPManager.cs": {
+    "mtime": 1785765945.9372716,
+    "ast_hash": "943d903a843e37589c25f192dab8962d",
+    "semantic_hash": "943d903a843e37589c25f192dab8962d"
+  },
+  "Assets/Script/TKPZone.cs": {
+    "mtime": 1785765945.9059813,
+    "ast_hash": "96102ce28b022e206d69e2b76ffcf512",
+    "semantic_hash": "96102ce28b022e206d69e2b76ffcf512"
+  },
+  "Assets/StreamingAssets/AI/npc_profiles.json": {
+    "mtime": 1788026179.8806329,
+    "ast_hash": "05dd70a37fff08a0a6782a6d6a28b880",
+    "semantic_hash": "05dd70a37fff08a0a6782a6d6a28b880"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs": {
+    "mtime": 1721760928.0,
+    "ast_hash": "e684e35594fad9cf5a547bdbebf15140",
+    "semantic_hash": "e684e35594fad9cf5a547bdbebf15140"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs": {
+    "mtime": 1721760928.0,
+    "ast_hash": "7204101af11cf8adf2b2e0d89b9873f1",
+    "semantic_hash": "7204101af11cf8adf2b2e0d89b9873f1"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark02.cs": {
+    "mtime": 1721760928.0,
+    "ast_hash": "12182f6ca92606ed0672125ce725d066",
+    "semantic_hash": "12182f6ca92606ed0672125ce725d066"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark03.cs": {
+    "mtime": 1721760928.0,
+    "ast_hash": "abc32bf494a52e957127e7322260e955",
+    "semantic_hash": "abc32bf494a52e957127e7322260e955"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark04.cs": {
+    "mtime": 1721760928.0,
+    "ast_hash": "41c2b5dc62b5fc2bd1e0c0323901f4e1",
+    "semantic_hash": "41c2b5dc62b5fc2bd1e0c0323901f4e1"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Scripts/CameraController.cs": {
+    "mtime": 1721760928.0,
+    "ast_hash": "f75a6e32c750a259e29e00a15e279ca4",
+    "semantic_hash": "f75a6e32c750a259e29e00a15e279ca4"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Scripts/ChatController.cs": {
+    "mtime": 1721760928.0,
+    "ast_hash": "8d813194e132cca1348ed8badc27680b",
+    "semantic_hash": "8d813194e132cca1348ed8badc27680b"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Scripts/DropdownSample.cs": {
+    "mtime": 1721760928.0,
+    "ast_hash": "9920ec8e71190b583a3dceb67888cb84",
+    "semantic_hash": "9920ec8e71190b583a3dceb67888cb84"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Scripts/EnvMapAnimator.cs": {
+    "mtime": 1721760928.0,
+    "ast_hash": "0e5ccff504d29b340d10c690938e2ae1",
+    "semantic_hash": "0e5ccff504d29b340d10c690938e2ae1"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Scripts/ObjectSpin.cs": {
+    "mtime": 1721760928.0,
+    "ast_hash": "b59e3b8ba56457646e97227a579d97ef",
+    "semantic_hash": "b59e3b8ba56457646e97227a579d97ef"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Scripts/ShaderPropAnimator.cs": {
+    "mtime": 1721760928.0,
+    "ast_hash": "4d1e11f7a0618119ff0af11d61b8dd39",
+    "semantic_hash": "4d1e11f7a0618119ff0af11d61b8dd39"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Scripts/SimpleScript.cs": {
+    "mtime": 1721760928.0,
+    "ast_hash": "9457b5a63a198def40dfd310e2b176ad",
+    "semantic_hash": "9457b5a63a198def40dfd310e2b176ad"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Scripts/SkewTextExample.cs": {
+    "mtime": 1721760928.0,
+    "ast_hash": "41a8bb099456e8f65cf157d372c51367",
+    "semantic_hash": "41a8bb099456e8f65cf157d372c51367"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_DigitValidator.cs": {
+    "mtime": 1721760928.0,
+    "ast_hash": "5a2b86de882f72d057d2cfe2b3229d56",
+    "semantic_hash": "5a2b86de882f72d057d2cfe2b3229d56"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_ExampleScript_01.cs": {
+    "mtime": 1721760928.0,
+    "ast_hash": "008f5326fd7590437feb1a9d485edd97",
+    "semantic_hash": "008f5326fd7590437feb1a9d485edd97"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_FrameRateCounter.cs": {
+    "mtime": 1721760928.0,
+    "ast_hash": "7af01fe89556925e1cbd615fd87fb43e",
+    "semantic_hash": "7af01fe89556925e1cbd615fd87fb43e"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_PhoneNumberValidator.cs": {
+    "mtime": 1721760928.0,
+    "ast_hash": "c9c3048db6974fca282f3d07b73062b3",
+    "semantic_hash": "c9c3048db6974fca282f3d07b73062b3"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_TextEventCheck.cs": {
+    "mtime": 1721760928.0,
+    "ast_hash": "86a7ab221205918c2d04b114c9b893ac",
+    "semantic_hash": "86a7ab221205918c2d04b114c9b893ac"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_TextEventHandler.cs": {
+    "mtime": 1721760928.0,
+    "ast_hash": "eac200ecd5909eac57a64f4c163cc4c1",
+    "semantic_hash": "eac200ecd5909eac57a64f4c163cc4c1"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_TextInfoDebugTool.cs": {
+    "mtime": 1721760928.0,
+    "ast_hash": "0afeb06cf860bad5e5d0ec56d74ae4be",
+    "semantic_hash": "0afeb06cf860bad5e5d0ec56d74ae4be"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_TextSelector_A.cs": {
+    "mtime": 1721760928.0,
+    "ast_hash": "8a0520e7a3bba1c46bcca856f8b0c959",
+    "semantic_hash": "8a0520e7a3bba1c46bcca856f8b0c959"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_TextSelector_B.cs": {
+    "mtime": 1721760928.0,
+    "ast_hash": "1b5ee0c2cdd8f295efb1f35c0d7f8239",
+    "semantic_hash": "1b5ee0c2cdd8f295efb1f35c0d7f8239"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Scripts/TMP_UiFrameRateCounter.cs": {
+    "mtime": 1721760928.0,
+    "ast_hash": "968d6a3c31bfdf7e839ad89dae9d7dd9",
+    "semantic_hash": "968d6a3c31bfdf7e839ad89dae9d7dd9"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Scripts/TMPro_InstructionOverlay.cs": {
+    "mtime": 1721760928.0,
+    "ast_hash": "abb2f9ef5b897ef8409d6c0f49fee98b",
+    "semantic_hash": "abb2f9ef5b897ef8409d6c0f49fee98b"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Scripts/TeleType.cs": {
+    "mtime": 1721760928.0,
+    "ast_hash": "df80aa1ed341bc62cc103ec8aab3fd01",
+    "semantic_hash": "df80aa1ed341bc62cc103ec8aab3fd01"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Scripts/TextConsoleSimulator.cs": {
+    "mtime": 1721760928.0,
+    "ast_hash": "43c70d35c96dec4945418facc6e2bf6b",
+    "semantic_hash": "43c70d35c96dec4945418facc6e2bf6b"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Scripts/TextMeshProFloatingText.cs": {
+    "mtime": 1721760928.0,
+    "ast_hash": "e965435a8850f7044c0363d05a5c7fab",
+    "semantic_hash": "e965435a8850f7044c0363d05a5c7fab"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Scripts/TextMeshSpawner.cs": {
+    "mtime": 1721760928.0,
+    "ast_hash": "4dfc5f357d8bc78820f6e7adabf5717d",
+    "semantic_hash": "4dfc5f357d8bc78820f6e7adabf5717d"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Scripts/VertexColorCycler.cs": {
+    "mtime": 1721760928.0,
+    "ast_hash": "9e46ccee35f6b84d3e22f5de24342bb5",
+    "semantic_hash": "9e46ccee35f6b84d3e22f5de24342bb5"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Scripts/VertexJitter.cs": {
+    "mtime": 1721760928.0,
+    "ast_hash": "b955ec108ccb5ad67db91b5628912398",
+    "semantic_hash": "b955ec108ccb5ad67db91b5628912398"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Scripts/VertexShakeA.cs": {
+    "mtime": 1721760928.0,
+    "ast_hash": "49d28055f5bf1d114171fa261df58df5",
+    "semantic_hash": "49d28055f5bf1d114171fa261df58df5"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Scripts/VertexShakeB.cs": {
+    "mtime": 1721760928.0,
+    "ast_hash": "4aa7a6fbcc1655ec907fd4be812a9ce7",
+    "semantic_hash": "4aa7a6fbcc1655ec907fd4be812a9ce7"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Scripts/VertexZoom.cs": {
+    "mtime": 1721760928.0,
+    "ast_hash": "2cfce87d6cbf7654c3e670bb6798a0a2",
+    "semantic_hash": "2cfce87d6cbf7654c3e670bb6798a0a2"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Scripts/WarpTextExample.cs": {
+    "mtime": 1721760928.0,
+    "ast_hash": "e4e83bc8456713a3c2849fbefb019d08",
+    "semantic_hash": "e4e83bc8456713a3c2849fbefb019d08"
+  },
+  "Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs": {
+    "mtime": 1738814303.0,
+    "ast_hash": "6893a8a98cadcd4f17504d8bd35e14a2",
+    "semantic_hash": "6893a8a98cadcd4f17504d8bd35e14a2"
+  },
+  "Assets/TutorialInfo/Scripts/Readme.cs": {
+    "mtime": 1738814303.0,
+    "ast_hash": "77191476a694acb5af6c98a0adabfcf1",
+    "semantic_hash": "77191476a694acb5af6c98a0adabfcf1"
+  },
+  "Packages/manifest.json": {
+    "mtime": 1776471146.1290934,
+    "ast_hash": "5cf682aa7c918f53b086aef45d583478",
+    "semantic_hash": "5cf682aa7c918f53b086aef45d583478"
+  },
+  "Packages/packages-lock.json": {
+    "mtime": 1776471241.8104496,
+    "ast_hash": "3515f522a846ef2d880b4210369fe5bb",
+    "semantic_hash": "3515f522a846ef2d880b4210369fe5bb"
+  },
+  "ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json": {
+    "mtime": 1738814303.0,
+    "ast_hash": "6e3b6ce3a6c6c017e58a058c16bb1986",
+    "semantic_hash": "6e3b6ce3a6c6c017e58a058c16bb1986"
+  },
+  "ProjectSettings/SceneTemplateSettings.json": {
+    "mtime": 1776475421.7604837,
+    "ast_hash": "eeb26e313b89cd9334b828428a4847ef",
+    "semantic_hash": "eeb26e313b89cd9334b828428a4847ef"
+  },
+  "Assets/DavidJalbert/LowPolyPeople/readme.txt": {
+    "mtime": 1705453575.0,
+    "ast_hash": "57b25f5dd171a6a347b2c64f2767875a",
+    "semantic_hash": "57b25f5dd171a6a347b2c64f2767875a"
+  },
+  "Assets/OfficePack/Documentation/GettingStarted.md": {
+    "mtime": 1784597871.0,
+    "ast_hash": "05f32edf01d369a82abd2483215a609a",
+    "semantic_hash": "05f32edf01d369a82abd2483215a609a"
+  },
+  "Assets/StreamingAssets/AI/prompt_template.txt": {
+    "mtime": 1786581827.4198046,
+    "ast_hash": "4e2aa36a5e23e9dba6913e6e8787247a",
+    "semantic_hash": "4e2aa36a5e23e9dba6913e6e8787247a"
+  },
+  "Assets/StreamingAssets/AI/world_lore.txt": {
+    "mtime": 1788026184.4695914,
+    "ast_hash": "e1ad93435e14202bb38f6cb457e2afed",
+    "semantic_hash": "e1ad93435e14202bb38f6cb457e2afed"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Fonts/Anton OFL.txt": {
+    "mtime": 1721760928.0,
+    "ast_hash": "71e7741989ff63136a33245f41324aa5",
+    "semantic_hash": "71e7741989ff63136a33245f41324aa5"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Fonts/Bangers - OFL.txt": {
+    "mtime": 1721760928.0,
+    "ast_hash": "2821c9cd02a5fbb8ea9478caa2bcc01c",
+    "semantic_hash": "2821c9cd02a5fbb8ea9478caa2bcc01c"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Fonts/Oswald-Bold - OFL.txt": {
+    "mtime": 1721760928.0,
+    "ast_hash": "d948b75f978acf84d0741b448c413cd3",
+    "semantic_hash": "d948b75f978acf84d0741b448c413cd3"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Fonts/Roboto-Bold - AFL.txt": {
+    "mtime": 1721760928.0,
+    "ast_hash": "175792518e4ac015ab6696d16c4f607e",
+    "semantic_hash": "175792518e4ac015ab6696d16c4f607e"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Fonts/Roboto-Bold - License.txt": {
+    "mtime": 1721760928.0,
+    "ast_hash": "fab738fdc2fd92eed39b5b169ddd1d82",
+    "semantic_hash": "fab738fdc2fd92eed39b5b169ddd1d82"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Fonts/Unity - OFL.txt": {
+    "mtime": 1721760928.0,
+    "ast_hash": "e62cc78eb651fcbca90f2111d186902d",
+    "semantic_hash": "e62cc78eb651fcbca90f2111d186902d"
+  },
+  "Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt": {
+    "mtime": 1690040293.0,
+    "ast_hash": "a4b00b7892bfb2fc9398e7f292af5b3d",
+    "semantic_hash": "a4b00b7892bfb2fc9398e7f292af5b3d"
+  },
+  "Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt": {
+    "mtime": 1690040293.0,
+    "ast_hash": "345c77ed32179f5f982dcf8e2b1d92af",
+    "semantic_hash": "345c77ed32179f5f982dcf8e2b1d92af"
+  },
+  "Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt": {
+    "mtime": 1690040293.0,
+    "ast_hash": "d52dd40acd32a62df3bc764b1e783ddf",
+    "semantic_hash": "d52dd40acd32a62df3bc764b1e783ddf"
+  },
+  "ProjectSettings/ProjectVersion.txt": {
+    "mtime": 1776471456.6261268,
+    "ast_hash": "556635b48ddcda0380c8879d30508503",
+    "semantic_hash": "556635b48ddcda0380c8879d30508503"
+  },
+  "README.md": {
+    "mtime": 1786573387.7246192,
+    "ast_hash": "b5d376a221213fdfbb3cdff235fe3a6e",
+    "semantic_hash": "b5d376a221213fdfbb3cdff235fe3a6e"
+  },
+  "Assets/DavidJalbert/LowPolyPeople/FBX/Textures/palette1.png": {
+    "mtime": 1705453574.0,
+    "ast_hash": "a5b8f43a948a843ace901359fd8fdd87",
+    "semantic_hash": "a5b8f43a948a843ace901359fd8fdd87"
+  },
+  "Assets/DavidJalbert/LowPolyPeople/FBX/Textures/palette2.png": {
+    "mtime": 1705453573.0,
+    "ast_hash": "24f617ede5c702a6c81621cde7ba0493",
+    "semantic_hash": "24f617ede5c702a6c81621cde7ba0493"
+  },
+  "Assets/DavidJalbert/LowPolyPeople/FBX/Textures/palette3.png": {
+    "mtime": 1705453564.0,
+    "ast_hash": "4c3897ff8f5071a18427c956bda850e0",
+    "semantic_hash": "4c3897ff8f5071a18427c956bda850e0"
+  },
+  "Assets/DavidJalbert/LowPolyPeople/FBX/Textures/palette4.png": {
+    "mtime": 1705453574.0,
+    "ast_hash": "43640759f84f4bfaa844914608cd8017",
+    "semantic_hash": "43640759f84f4bfaa844914608cd8017"
+  },
+  "Assets/DavidJalbert/LowPolyPeople/FBX/Textures/palette5.png": {
+    "mtime": 1705453570.0,
+    "ast_hash": "73de955a5d74fe725b9afca904472e5b",
+    "semantic_hash": "73de955a5d74fe725b9afca904472e5b"
+  },
+  "Assets/DavidJalbert/LowPolyPeople/FBX/Textures/palette6.png": {
+    "mtime": 1705453565.0,
+    "ast_hash": "0988266547f0516285a663967b42e830",
+    "semantic_hash": "0988266547f0516285a663967b42e830"
+  },
+  "Assets/DavidJalbert/LowPolyPeople/FBX/Textures/palette7.png": {
+    "mtime": 1705453577.0,
+    "ast_hash": "19a45170e4ef875a4e88fdbf282768b1",
+    "semantic_hash": "19a45170e4ef875a4e88fdbf282768b1"
+  },
+  "Assets/DavidJalbert/LowPolyPeople/FBX/Textures/palette8.png": {
+    "mtime": 1705453579.0,
+    "ast_hash": "6663302cd00dfccd8a7b75f4ee2ad72f",
+    "semantic_hash": "6663302cd00dfccd8a7b75f4ee2ad72f"
+  },
+  "Assets/DavidJalbert/LowPolyPeople/FBX/Textures/palette9.png": {
+    "mtime": 1705453585.0,
+    "ast_hash": "4b33f877c348d1bf20586152933075b9",
+    "semantic_hash": "4b33f877c348d1bf20586152933075b9"
+  },
+  "Assets/Low Poly Furniture/Demos/Demo_Assets/Lightmap-0_comp_dir.png": {
+    "mtime": 1672946766.0,
+    "ast_hash": "7c823fa8498230f523b3e6d38b5be116",
+    "semantic_hash": "7c823fa8498230f523b3e6d38b5be116"
+  },
+  "Assets/Low Poly Furniture/Textures/ty-shining-gems-24-32x.png": {
+    "mtime": 1672946773.0,
+    "ast_hash": "0566cc6a0b6efe00202eaf8c9b6dbecb",
+    "semantic_hash": "0566cc6a0b6efe00202eaf8c9b6dbecb"
+  },
+  "Assets/Low Poly Simple Urban City 3D Asset Pack/Textures/tex.png": {
+    "mtime": 1671819547.0,
+    "ast_hash": "d0ed66c1db557c80648564f6e055d17f",
+    "semantic_hash": "d0ed66c1db557c80648564f6e055d17f"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Building Sky_big_color01.png": {
+    "mtime": 1491228037.0,
+    "ast_hash": "b356a09083f5f654d1fb65e3644491d6",
+    "semantic_hash": "b356a09083f5f654d1fb65e3644491d6"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Building Sky_big_color02.png": {
+    "mtime": 1491227995.0,
+    "ast_hash": "aeeef49ece2af6dfa15eca937a0dc456",
+    "semantic_hash": "aeeef49ece2af6dfa15eca937a0dc456"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Building Sky_big_color03.png": {
+    "mtime": 1491228095.0,
+    "ast_hash": "e846b5819524d83310e0d095613396ab",
+    "semantic_hash": "e846b5819524d83310e0d095613396ab"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Building Sky_small_color01.png": {
+    "mtime": 1491228167.0,
+    "ast_hash": "344608d93a32ba63b69886730d8e55bf",
+    "semantic_hash": "344608d93a32ba63b69886730d8e55bf"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Building Sky_small_color02.png": {
+    "mtime": 1491228109.0,
+    "ast_hash": "16020d00f4d73db2210cf3489c042ea9",
+    "semantic_hash": "16020d00f4d73db2210cf3489c042ea9"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Building Sky_small_color03.png": {
+    "mtime": 1491228001.0,
+    "ast_hash": "a1db6c826549b3ecc12955a28d58b0d5",
+    "semantic_hash": "a1db6c826549b3ecc12955a28d58b0d5"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Building_Auto Service.png": {
+    "mtime": 1491228157.0,
+    "ast_hash": "92fa46b7ade3459f83381c152b5e8dea",
+    "semantic_hash": "92fa46b7ade3459f83381c152b5e8dea"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Building_Bakery.png": {
+    "mtime": 1491227998.0,
+    "ast_hash": "588fc201b9e46913ce474c0869c4cee5",
+    "semantic_hash": "588fc201b9e46913ce474c0869c4cee5"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Building_Bar.png": {
+    "mtime": 1491228198.0,
+    "ast_hash": "e3e62f340c78c8b5298681bed17912a5",
+    "semantic_hash": "e3e62f340c78c8b5298681bed17912a5"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Building_Books Shop.png": {
+    "mtime": 1491228041.0,
+    "ast_hash": "daa225f95ca92dae844104cbc1de68d1",
+    "semantic_hash": "daa225f95ca92dae844104cbc1de68d1"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Building_Chicken Shop.png": {
+    "mtime": 1491228160.0,
+    "ast_hash": "059de4aa2ec9711ff0fa50983cfb4070",
+    "semantic_hash": "059de4aa2ec9711ff0fa50983cfb4070"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Building_Clothing.png": {
+    "mtime": 1491228195.0,
+    "ast_hash": "fefeb4609e218bb461c7f747df677911",
+    "semantic_hash": "fefeb4609e218bb461c7f747df677911"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Building_Coffee Shop.png": {
+    "mtime": 1491228129.0,
+    "ast_hash": "728f4923ecfd72f47e7288e6ce3bc771",
+    "semantic_hash": "728f4923ecfd72f47e7288e6ce3bc771"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Building_Drug Store.png": {
+    "mtime": 1491228145.0,
+    "ast_hash": "6b115ebcb18d4cfcbac793132d6b96e4",
+    "semantic_hash": "6b115ebcb18d4cfcbac793132d6b96e4"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Building_Factory.png": {
+    "mtime": 1491228132.0,
+    "ast_hash": "d51cb719a8b0ba827c2cf75c0e15562a",
+    "semantic_hash": "d51cb719a8b0ba827c2cf75c0e15562a"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Building_Fast Food.png": {
+    "mtime": 1491227994.0,
+    "ast_hash": "0ba2a053926610c4343897200cf87a6e",
+    "semantic_hash": "0ba2a053926610c4343897200cf87a6e"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Building_Fruits  Shop.png": {
+    "mtime": 1491227993.0,
+    "ast_hash": "5e5e8a158f7e2557767bbd91f2c71c3a",
+    "semantic_hash": "5e5e8a158f7e2557767bbd91f2c71c3a"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Building_Gas Station.png": {
+    "mtime": 1491228211.0,
+    "ast_hash": "698d3fdabf7894c2441e5fbb5e6db8bc",
+    "semantic_hash": "698d3fdabf7894c2441e5fbb5e6db8bc"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Building_Gift Shop.png": {
+    "mtime": 1491228005.0,
+    "ast_hash": "aa807172c1fc960b1c79faa01e3dea42",
+    "semantic_hash": "aa807172c1fc960b1c79faa01e3dea42"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Building_House_01_color01.png": {
+    "mtime": 1491228136.0,
+    "ast_hash": "07fca263bc2a5ba49fb61cbf66286aba",
+    "semantic_hash": "07fca263bc2a5ba49fb61cbf66286aba"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Building_House_01_color02.png": {
+    "mtime": 1491228048.0,
+    "ast_hash": "a1de7a383306bc9c8951455aedd1cba2",
+    "semantic_hash": "a1de7a383306bc9c8951455aedd1cba2"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Building_House_01_color03.png": {
+    "mtime": 1491227995.0,
+    "ast_hash": "f43856009ba1143198f00c676a363d93",
+    "semantic_hash": "f43856009ba1143198f00c676a363d93"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Building_House_02_color01.png": {
+    "mtime": 1491228200.0,
+    "ast_hash": "b560e4a69ec8b713b8949487788bf044",
+    "semantic_hash": "b560e4a69ec8b713b8949487788bf044"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Building_House_02_color02.png": {
+    "mtime": 1491228138.0,
+    "ast_hash": "e5197c8a98d07a2eccfe8833062e64b4",
+    "semantic_hash": "e5197c8a98d07a2eccfe8833062e64b4"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Building_House_02_color03.png": {
+    "mtime": 1491228178.0,
+    "ast_hash": "000b0efb7d5d6673a209d287d9a564da",
+    "semantic_hash": "000b0efb7d5d6673a209d287d9a564da"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Building_House_03_color01.png": {
+    "mtime": 1491228029.0,
+    "ast_hash": "40bdb11eef0a5bf3a9e47b26a6412354",
+    "semantic_hash": "40bdb11eef0a5bf3a9e47b26a6412354"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Building_House_03_color02.png": {
+    "mtime": 1491228093.0,
+    "ast_hash": "a27529298b8fa61d209cba5dec499196",
+    "semantic_hash": "a27529298b8fa61d209cba5dec499196"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Building_House_03_color03.png": {
+    "mtime": 1491228206.0,
+    "ast_hash": "45bee2ead7f28fad3bdd50aec75867ed",
+    "semantic_hash": "45bee2ead7f28fad3bdd50aec75867ed"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Building_House_04_color01.png": {
+    "mtime": 1491228121.0,
+    "ast_hash": "2a1c6c6d35c32173e467c7667dd123e7",
+    "semantic_hash": "2a1c6c6d35c32173e467c7667dd123e7"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Building_House_04_color02.png": {
+    "mtime": 1491228052.0,
+    "ast_hash": "cc17381c3a2910488cdc874b664969be",
+    "semantic_hash": "cc17381c3a2910488cdc874b664969be"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Building_House_04_color03.png": {
+    "mtime": 1491228088.0,
+    "ast_hash": "2168023f2c3a88f824d6282ad8a59576",
+    "semantic_hash": "2168023f2c3a88f824d6282ad8a59576"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Building_Music Store.png": {
+    "mtime": 1491228170.0,
+    "ast_hash": "093e8946726529ca7d9be7eadd392ada",
+    "semantic_hash": "093e8946726529ca7d9be7eadd392ada"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Building_Pizza.png": {
+    "mtime": 1491228003.0,
+    "ast_hash": "b2ce6ad4ed01e486ecbc9b0c0ca97eed",
+    "semantic_hash": "b2ce6ad4ed01e486ecbc9b0c0ca97eed"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Building_Residential_color01.png": {
+    "mtime": 1491228164.0,
+    "ast_hash": "d12beb34612316c018537a1f400fb989",
+    "semantic_hash": "d12beb34612316c018537a1f400fb989"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Building_Residential_color02.png": {
+    "mtime": 1491228111.0,
+    "ast_hash": "9e236b21408faff0a22ac8a408d24d58",
+    "semantic_hash": "9e236b21408faff0a22ac8a408d24d58"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Building_Residential_color03.png": {
+    "mtime": 1491228012.0,
+    "ast_hash": "01a787128e39fc231d4f559df338b495",
+    "semantic_hash": "01a787128e39fc231d4f559df338b495"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Building_Restaurant.png": {
+    "mtime": 1491228012.0,
+    "ast_hash": "daf5d256bd976f97739c6c69f8d9ceaf",
+    "semantic_hash": "daf5d256bd976f97739c6c69f8d9ceaf"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Building_Shoes Shop.png": {
+    "mtime": 1491228041.0,
+    "ast_hash": "30fdc1365758fa736f96c634f6e71811",
+    "semantic_hash": "30fdc1365758fa736f96c634f6e71811"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Building_Stadium.png": {
+    "mtime": 1491228132.0,
+    "ast_hash": "350c00f218d2d2b40cc63059da8a9d88",
+    "semantic_hash": "350c00f218d2d2b40cc63059da8a9d88"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Building_Super Market.png": {
+    "mtime": 1491228050.0,
+    "ast_hash": "9f15ae531f1d0375bb5de41134694679",
+    "semantic_hash": "9f15ae531f1d0375bb5de41134694679"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Natures.png": {
+    "mtime": 1491228192.0,
+    "ast_hash": "a3c2e48db26ae5b4e69cc4830db84058",
+    "semantic_hash": "a3c2e48db26ae5b4e69cc4830db84058"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Props_BillBoard_large.png": {
+    "mtime": 1491228039.0,
+    "ast_hash": "d81d36e0dfb76b1fbce6603b26b06838",
+    "semantic_hash": "d81d36e0dfb76b1fbce6603b26b06838"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Props_BillBoard_medium.png": {
+    "mtime": 1491228083.0,
+    "ast_hash": "27f28a1bc8cbe8b50b86683cd571c9a6",
+    "semantic_hash": "27f28a1bc8cbe8b50b86683cd571c9a6"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Props_BillBoard_small.png": {
+    "mtime": 1491228118.0,
+    "ast_hash": "e27e8845ac9ccd4c249776c58951b50b",
+    "semantic_hash": "e27e8845ac9ccd4c249776c58951b50b"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Props_Props_01.png": {
+    "mtime": 1491228044.0,
+    "ast_hash": "32626d83114c455b2069a5d0d5d7f1cc",
+    "semantic_hash": "32626d83114c455b2069a5d0d5d7f1cc"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Props_RoofProps.png": {
+    "mtime": 1491228180.0,
+    "ast_hash": "9067048987ed54bba6062808ab8b055c",
+    "semantic_hash": "9067048987ed54bba6062808ab8b055c"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Props_TrafficProps.png": {
+    "mtime": 1491228156.0,
+    "ast_hash": "536260367b05138c274853cdcf8d1ea7",
+    "semantic_hash": "536260367b05138c274853cdcf8d1ea7"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Road Concrete Tile.png": {
+    "mtime": 1491228058.0,
+    "ast_hash": "01ef1c3014e40dcfdc6fba3736e3f2ae",
+    "semantic_hash": "01ef1c3014e40dcfdc6fba3736e3f2ae"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Road.png": {
+    "mtime": 1491228061.0,
+    "ast_hash": "1093e820583f7855aeb999f9068b8772",
+    "semantic_hash": "1093e820583f7855aeb999f9068b8772"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Vehicle_Ambulance.png": {
+    "mtime": 1491228020.0,
+    "ast_hash": "a6b646c6346f1412a07e0bf5fafa25de",
+    "semantic_hash": "a6b646c6346f1412a07e0bf5fafa25de"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Vehicle_Bus_1.png": {
+    "mtime": 1491228208.0,
+    "ast_hash": "ee90f5b7a17f21186e1993b1b1ceee24",
+    "semantic_hash": "ee90f5b7a17f21186e1993b1b1ceee24"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Vehicle_Bus_2.png": {
+    "mtime": 1491227996.0,
+    "ast_hash": "8002f6fc34cd671d034b6190bd590cb0",
+    "semantic_hash": "8002f6fc34cd671d034b6190bd590cb0"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Vehicle_Bus_3.png": {
+    "mtime": 1491228214.0,
+    "ast_hash": "8e5cf88e699b883b5dffff38f36693cf",
+    "semantic_hash": "8e5cf88e699b883b5dffff38f36693cf"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Vehicle_Car_1.png": {
+    "mtime": 1491228218.0,
+    "ast_hash": "d2e61e657b960859c70f6bedda5a405a",
+    "semantic_hash": "d2e61e657b960859c70f6bedda5a405a"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Vehicle_Car_2.png": {
+    "mtime": 1491228128.0,
+    "ast_hash": "17378f9201d2b2cee7c3706cf97889d7",
+    "semantic_hash": "17378f9201d2b2cee7c3706cf97889d7"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Vehicle_Car_3.png": {
+    "mtime": 1491228103.0,
+    "ast_hash": "0fbe28e2e3497a642c2c84b276fe46bb",
+    "semantic_hash": "0fbe28e2e3497a642c2c84b276fe46bb"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Vehicle_Container_1.png": {
+    "mtime": 1491228090.0,
+    "ast_hash": "bf31602cdf6b18c04aa689ac5da9778a",
+    "semantic_hash": "bf31602cdf6b18c04aa689ac5da9778a"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Vehicle_Container_2.png": {
+    "mtime": 1491228036.0,
+    "ast_hash": "5bdc7becce7aa1997518de8940fa9bc6",
+    "semantic_hash": "5bdc7becce7aa1997518de8940fa9bc6"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Vehicle_Container_3.png": {
+    "mtime": 1491228122.0,
+    "ast_hash": "9fadebc7819bdbb5305a9a6b762483eb",
+    "semantic_hash": "9fadebc7819bdbb5305a9a6b762483eb"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Vehicle_Pick up Truck_1.png": {
+    "mtime": 1491228191.0,
+    "ast_hash": "132cb8a0ff94a5314244cdf8d8f6f58f",
+    "semantic_hash": "132cb8a0ff94a5314244cdf8d8f6f58f"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Vehicle_Pick up Truck_2.png": {
+    "mtime": 1491228143.0,
+    "ast_hash": "b527ca58d10523caa763a4369ed8499b",
+    "semantic_hash": "b527ca58d10523caa763a4369ed8499b"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Vehicle_Pick up Truck_3.png": {
+    "mtime": 1491228056.0,
+    "ast_hash": "746084a315b20ee9d61cab296f2d136e",
+    "semantic_hash": "746084a315b20ee9d61cab296f2d136e"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Vehicle_Police Car.png": {
+    "mtime": 1491228169.0,
+    "ast_hash": "83cddeeac6f97e4e7bc655123f155869",
+    "semantic_hash": "83cddeeac6f97e4e7bc655123f155869"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Vehicle_SUV_1.png": {
+    "mtime": 1491228077.0,
+    "ast_hash": "6992f66e6ebe016e51d1ee504f285ccd",
+    "semantic_hash": "6992f66e6ebe016e51d1ee504f285ccd"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Vehicle_SUV_2.png": {
+    "mtime": 1491228170.0,
+    "ast_hash": "5e463f94e277bea10acea2485754dc1c",
+    "semantic_hash": "5e463f94e277bea10acea2485754dc1c"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Vehicle_SUV_3.png": {
+    "mtime": 1491228174.0,
+    "ast_hash": "3d0a4b304c0765981d21e9d9400bd91a",
+    "semantic_hash": "3d0a4b304c0765981d21e9d9400bd91a"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Vehicle_Taxi.png": {
+    "mtime": 1491228196.0,
+    "ast_hash": "edeb7a77a63bfcfa3d25ceb005af1218",
+    "semantic_hash": "edeb7a77a63bfcfa3d25ceb005af1218"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Vehicle_Truck_1.png": {
+    "mtime": 1491228204.0,
+    "ast_hash": "6df3452041f128d4ac7476faa29a61dd",
+    "semantic_hash": "6df3452041f128d4ac7476faa29a61dd"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Vehicle_Truck_2.png": {
+    "mtime": 1491228154.0,
+    "ast_hash": "0ea2234ebaa3436139f5dffd0cdd6b9a",
+    "semantic_hash": "0ea2234ebaa3436139f5dffd0cdd6b9a"
+  },
+  "Assets/SimplePoly City - Low Poly Assets/Textures/Vehicle_Truck_3.png": {
+    "mtime": 1491228046.0,
+    "ast_hash": "0214f51f6983edeff6d3793e73fe322d",
+    "semantic_hash": "0214f51f6983edeff6d3793e73fe322d"
+  },
+  "Assets/Sprites/UI/circle_ring.png": {
+    "mtime": 1786569710.264326,
+    "ast_hash": "3d8a4305e8549ae4fa76ee7578df88a5",
+    "semantic_hash": "3d8a4305e8549ae4fa76ee7578df88a5"
+  },
+  "Assets/Sprites/UI/circle_solid.png": {
+    "mtime": 1786569710.249643,
+    "ast_hash": "7682e9c43fab0ec266bdc39cd2b6e193",
+    "semantic_hash": "7682e9c43fab0ec266bdc39cd2b6e193"
+  },
+  "Assets/Sprites/UI/rounded_rect.png": {
+    "mtime": 1786569710.2964818,
+    "ast_hash": "afd51305cb2650434415b8300f2a4e53",
+    "semantic_hash": "afd51305cb2650434415b8300f2a4e53"
+  },
+  "Assets/Sprites/UI/search_icon.png": {
+    "mtime": 1786569710.3010955,
+    "ast_hash": "706f23d61580773ed4ed91e5a7b618bb",
+    "semantic_hash": "706f23d61580773ed4ed91e5a7b618bb"
+  },
+  "Assets/Sprites/UI/sparkle_star.png": {
+    "mtime": 1786569710.2815845,
+    "ast_hash": "6c517e4d5aa6ea129106b6f70beb3ecd",
+    "semantic_hash": "6c517e4d5aa6ea129106b6f70beb3ecd"
+  },
+  "Assets/Studio Horizon/Simple Building Generic Free/Textures/Simple_Buildings_Atlas.png": {
+    "mtime": 1696053330.0,
+    "ast_hash": "c7a5b3acdc277664d8d2fbfdc19c10a9",
+    "semantic_hash": "c7a5b3acdc277664d8d2fbfdc19c10a9"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Materials/Crate - Surface Shader Scene_MaskMap.png": {
+    "mtime": 1786559707.3007357,
+    "ast_hash": "1cd8e17957d4cd692850f590128ebabe",
+    "semantic_hash": "1cd8e17957d4cd692850f590128ebabe"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Sprites/Default Sprites.png": {
+    "mtime": 1721760928.0,
+    "ast_hash": "c0835872f1061e68f125c1b9a7329cf6",
+    "semantic_hash": "c0835872f1061e68f125c1b9a7329cf6"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Textures/Brushed Metal 3.jpg": {
+    "mtime": 1721760928.0,
+    "ast_hash": "e2a48914a497be9f8a941e653d217c42",
+    "semantic_hash": "e2a48914a497be9f8a941e653d217c42"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Textures/Floor Cement.jpg": {
+    "mtime": 1721760928.0,
+    "ast_hash": "1e0edd414d33833c3914723d2c854e10",
+    "semantic_hash": "1e0edd414d33833c3914723d2c854e10"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Textures/Floor Tiles 1 - diffuse.jpg": {
+    "mtime": 1721760929.0,
+    "ast_hash": "d8bf4cf68dac3a9d77bfe9350112ac42",
+    "semantic_hash": "d8bf4cf68dac3a9d77bfe9350112ac42"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Textures/Fruit Jelly (B&W).jpg": {
+    "mtime": 1721760929.0,
+    "ast_hash": "08da843bb0c657ddc65837bedfad4282",
+    "semantic_hash": "08da843bb0c657ddc65837bedfad4282"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Textures/Gradient Diagonal (Color).jpg": {
+    "mtime": 1721760929.0,
+    "ast_hash": "4d222a8923ee30482162bf5481148681",
+    "semantic_hash": "4d222a8923ee30482162bf5481148681"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Textures/Gradient Horizontal (Color).jpg": {
+    "mtime": 1721760929.0,
+    "ast_hash": "f92384c0b129979d168d3ec298b0f03d",
+    "semantic_hash": "f92384c0b129979d168d3ec298b0f03d"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Textures/Gradient Vertical (Color).jpg": {
+    "mtime": 1721760929.0,
+    "ast_hash": "fd5a4d4ca1c6293e163afc7dffc60592",
+    "semantic_hash": "fd5a4d4ca1c6293e163afc7dffc60592"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Textures/Small Crate_diffuse.jpg": {
+    "mtime": 1721760929.0,
+    "ast_hash": "1167f1636b1eb54636d36fb1f935fb4c",
+    "semantic_hash": "1167f1636b1eb54636d36fb1f935fb4c"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Textures/Small Crate_normal.jpg": {
+    "mtime": 1721760929.0,
+    "ast_hash": "6b51a76c9f9863a54ed1fe81939a18cf",
+    "semantic_hash": "6b51a76c9f9863a54ed1fe81939a18cf"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Textures/Sunny Days - Seamless.jpg": {
+    "mtime": 1721760929.0,
+    "ast_hash": "046760a79f9f81611d82e06551eb2d86",
+    "semantic_hash": "046760a79f9f81611d82e06551eb2d86"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Textures/Text Overflow - Linked Text Image 1.png": {
+    "mtime": 1721760929.0,
+    "ast_hash": "b4077499505f2ab8d45966362a098f90",
+    "semantic_hash": "b4077499505f2ab8d45966362a098f90"
+  },
+  "Assets/TextMesh Pro/Examples & Extras/Textures/Text Overflow - Linked Text UI Screenshot.png": {
+    "mtime": 1721760929.0,
+    "ast_hash": "c433e8a4de4438d13693ed173b0d2dab",
+    "semantic_hash": "c433e8a4de4438d13693ed173b0d2dab"
+  },
+  "Assets/TutorialInfo/Icons/HDRP.png": {
+    "mtime": 1738814303.0,
+    "ast_hash": "418c191fb206cde91eaaba879ad15135",
+    "semantic_hash": "418c191fb206cde91eaaba879ad15135"
+  },
+  "Assets/TutorialInfo/Icons/Help_Icon.png": {
+    "mtime": 1738814303.0,
+    "ast_hash": "6b72be31faa13f9dad2561f85de5f102",
+    "semantic_hash": "6b72be31faa13f9dad2561f85de5f102"
+  },
+  "Assets/Script/InterrogationCameraController.cs": {
+    "mtime": 1788074962.0599089,
+    "ast_hash": "5a09543ede2b9592657467adcaefd115",
+    "semantic_hash": "5a09543ede2b9592657467adcaefd115"
+  }
+}

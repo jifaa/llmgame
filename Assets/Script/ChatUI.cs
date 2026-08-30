@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using TMPro;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,6 +10,7 @@ public class ChatUI : MonoBehaviour
 {
     [Header("UI References")]
     public GameObject chatPanel;
+    public TMP_Text npcNameText;
     public TMP_Text chatText;
     public TMP_InputField inputField;
 
@@ -33,10 +36,120 @@ public class ChatUI : MonoBehaviour
         "yo", "woy", "oy"
     };
 
+    void Awake()
+    {
+        EnsureEventSystem();
+    }
+
     void Start()
     {
+        AutoFindReferences();
         if (chatPanel != null)
             chatPanel.SetActive(false);
+    }
+
+    void Update()
+    {
+        if (!IsOpen()) return;
+
+        // Tekan Enter untuk langsung kirim pesan
+        if ((Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)) && !isWaitingReply)
+        {
+            if (inputField != null && !string.IsNullOrWhiteSpace(inputField.text))
+            {
+                SendMessageToNPC();
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            CloseChat();
+        }
+    }
+
+    private void EnsureEventSystem()
+    {
+        if (EventSystem.current == null)
+        {
+            var es = Object.FindAnyObjectByType<EventSystem>(FindObjectsInactive.Include);
+            if (es == null)
+            {
+                GameObject esGo = new GameObject("EventSystem");
+                esGo.AddComponent<EventSystem>();
+                esGo.AddComponent<StandaloneInputModule>();
+            }
+        }
+    }
+
+    private void AutoFindReferences()
+    {
+        if (chatPanel == null)
+        {
+            GameObject p = GameObject.Find("ChatPanel");
+            chatPanel = p != null ? p : gameObject;
+        }
+
+        if (chatPanel == null) return;
+
+        // 1. Cari ChatText
+        if (chatText == null)
+        {
+            Transform tChat = chatPanel.transform.Find("ChatText") ?? chatPanel.transform.Find("Chat_Text") ?? chatPanel.transform.Find("Dialog_Text");
+            if (tChat != null)
+                chatText = tChat.GetComponent<TMP_Text>();
+
+            if (chatText == null)
+            {
+                foreach (var t in chatPanel.GetComponentsInChildren<TMP_Text>(true))
+                {
+                    if (t.GetComponentInParent<TMP_InputField>() == null && t.GetComponentInParent<Button>() == null)
+                    {
+                        chatText = t;
+                        break;
+                    }
+                }
+            }
+        }
+
+        // 2. Cari InputField
+        if (inputField == null)
+        {
+            inputField = chatPanel.GetComponentInChildren<TMP_InputField>(true);
+        }
+
+        if (inputField != null)
+        {
+            inputField.interactable = true;
+            inputField.onSubmit.RemoveListener(OnInputSubmit);
+            inputField.onSubmit.AddListener(OnInputSubmit);
+        }
+
+        // 3. Cari Header NameText jika ada
+        if (npcNameText == null)
+        {
+            Transform tName = chatPanel.transform.Find("NPC_Name_Text") ?? chatPanel.transform.Find("NameText") ?? chatPanel.transform.Find("Title_Text");
+            if (tName != null)
+                npcNameText = tName.GetComponent<TMP_Text>();
+        }
+
+        // 4. Cari AIChatClient
+        if (aiChatClient == null)
+        {
+            aiChatClient = Object.FindAnyObjectByType<AIChatClient>();
+            if (aiChatClient == null)
+            {
+                GameObject clientGo = new GameObject("AIChatClient");
+                aiChatClient = clientGo.AddComponent<AIChatClient>();
+            }
+        }
+
+        // 5. Auto-hook SendButton
+        Button btn = chatPanel.GetComponentInChildren<Button>(true);
+        if (btn != null)
+        {
+            btn.onClick.RemoveListener(SendMessageToNPC);
+            btn.onClick.AddListener(SendMessageToNPC);
+        }
     }
 
     public bool IsOpen()
@@ -44,11 +157,37 @@ public class ChatUI : MonoBehaviour
         return chatPanel != null && chatPanel.activeSelf;
     }
 
+    private string GetDisplayName(NPCBrainTest npc)
+    {
+        if (npc == null) return "Saksi";
+        if (!string.IsNullOrEmpty(npc.npcName)) return npc.npcName;
+
+        string n = npc.gameObject.name.ToLower();
+        if (n.Contains("normal-man-a") || n.Contains("bima")) return "Bima Santoso";
+        if (n.Contains("normal-man-b") || n.Contains("ardi") || n.Contains("maya")) return "Ardi Adrian";
+        if (n.Contains("normal-man-c") || n.Contains("dito")) return "Dito Pradana";
+
+        return npc.gameObject.name;
+    }
+
+    private string FormatNPCDialogue(string name, string text)
+    {
+        return $"<color=#E0A838><b>[{name}]</b></color>\n{text}";
+    }
+
     public void OpenChat(NPCBrainTest npc)
     {
         currentNPC = npc;
         chatHistory = "";
         isWaitingReply = false;
+
+        AutoFindReferences();
+
+        string displayName = GetDisplayName(npc);
+        if (npc != null && string.IsNullOrEmpty(npc.npcName)) npc.npcName = displayName;
+
+        if (npcNameText != null)
+            npcNameText.text = displayName;
 
         if (chatPanel != null)
             chatPanel.SetActive(true);
@@ -62,11 +201,14 @@ public class ChatUI : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
-        inputField.text = "";
-        inputField.Select();
-        inputField.ActivateInputField();
+        if (inputField != null)
+        {
+            inputField.text = "";
+            inputField.Select();
+            inputField.ActivateInputField();
+        }
 
-        ShowNPCText(npc.npcName + ": Ada yang ingin kamu tanyakan?");
+        ShowNPCText(FormatNPCDialogue(displayName, "Ada yang ingin kamu tanyakan?"));
     }
 
     public void SendMessageToNPC()
@@ -74,24 +216,29 @@ public class ChatUI : MonoBehaviour
         if (currentNPC == null) return;
         if (isWaitingReply) return;
 
-        string playerMessage = inputField.text.Trim();
+        string playerMessage = inputField != null ? inputField.text.Trim() : "";
 
         if (string.IsNullOrWhiteSpace(playerMessage))
             return;
 
-        inputField.text = "";
-        inputField.Select();
-        inputField.ActivateInputField();
+        if (inputField != null)
+        {
+            inputField.text = "";
+            inputField.Select();
+            inputField.ActivateInputField();
+        }
+
+        string displayName = GetDisplayName(currentNPC);
 
         // Sapaan pendek jangan dikirim ke AI, biar NPC nggak overthinking
         if (IsGreeting(playerMessage))
         {
             string reply = GetGreetingReply(currentNPC);
 
-            ShowNPCText(currentNPC.npcName + ": " + reply);
+            ShowNPCText(FormatNPCDialogue(displayName, reply));
 
             chatHistory += "\nDetektif: " + playerMessage;
-            chatHistory += "\n" + currentNPC.npcName + ": " + reply;
+            chatHistory += "\n" + displayName + ": " + reply;
 
             return;
         }
@@ -99,11 +246,19 @@ public class ChatUI : MonoBehaviour
         if (aiChatClient == null)
         {
             Debug.LogError("AIChatClient belum diisi di Inspector ChatUI!");
-            ShowNPCText(currentNPC.npcName + ": Sistem AI belum tersambung.");
+            ShowNPCText(FormatNPCDialogue(displayName, "Sistem AI belum tersambung."));
             return;
         }
 
         StartCoroutine(SendMessageRoutine(playerMessage));
+    }
+
+    private void OnInputSubmit(string text)
+    {
+        if (!isWaitingReply && !string.IsNullOrWhiteSpace(text))
+        {
+            SendMessageToNPC();
+        }
     }
 
     IEnumerator SendMessageRoutine(string playerMessage)
@@ -111,8 +266,9 @@ public class ChatUI : MonoBehaviour
         isWaitingReply = true;
 
         NPCBrainTest npc = currentNPC;
+        string displayName = GetDisplayName(npc);
 
-        ShowNPCText(npc.npcName + ": ...");
+        ShowNPCText(FormatNPCDialogue(displayName, "..."));
 
         yield return StartCoroutine(aiChatClient.AskNPC(
             npc,
@@ -125,10 +281,10 @@ public class ChatUI : MonoBehaviour
 
                 string cleanReply = CleanNPCReply(reply, npc);
 
-                ShowNPCText(npc.npcName + ": " + cleanReply);
+                ShowNPCText(FormatNPCDialogue(displayName, cleanReply));
 
                 chatHistory += "\nDetektif: " + playerMessage;
-                chatHistory += "\n" + npc.npcName + ": " + cleanReply;
+                chatHistory += "\n" + displayName + ": " + cleanReply;
 
                 // Biar history nggak kegedean dan bikin AI mabok
                 if (chatHistory.Length > 1200)
@@ -174,6 +330,7 @@ public class ChatUI : MonoBehaviour
                 return "Iya. Mau tanya apa?";
 
             case "maya":
+            case "ardi":
                 return "Halo. Ada yang ingin kamu tanyakan?";
 
             case "dito":
@@ -241,11 +398,14 @@ public class ChatUI : MonoBehaviour
     {
         if (chatText == null) yield break;
 
-        chatText.text = "";
+        chatText.text = message;
+        chatText.maxVisibleCharacters = 0;
+        chatText.ForceMeshUpdate();
 
-        foreach (char letter in message)
+        int totalCharacters = chatText.textInfo.characterCount;
+        for (int i = 1; i <= totalCharacters; i++)
         {
-            chatText.text += letter;
+            chatText.maxVisibleCharacters = i;
             yield return new WaitForSeconds(typeSpeed);
         }
     }
@@ -273,20 +433,5 @@ public class ChatUI : MonoBehaviour
         Cursor.visible = false;
 
         currentNPC = null;
-    }
-
-    void Update()
-    {
-        if (!IsOpen()) return;
-
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            SendMessageToNPC();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            CloseChat();
-        }
     }
 }

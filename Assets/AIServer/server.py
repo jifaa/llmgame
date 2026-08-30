@@ -7,11 +7,11 @@ import re
 app = FastAPI()
 
 # ==================== CONFIG 9ROUTER ====================
-NINEROUTER_URL = "http://192.168.1.177:20128/v1/chat/completions"
+NINEROUTER_URL = "https://router.juan.web.id/v1/chat/completions"
 # Nama model atau combo di dashboard 9Router
-MODEL_NAME = "juancombo"
+MODEL_NAME = "gemini-3.5-flash-lite"
 # API Key 9Router
-NINEROUTER_API_KEY = "sk-b06ae4c59b658f32-gfdyq4-5e889a4c"
+NINEROUTER_API_KEY = "sk-lXLUF8EM9A57JdgPiGdaN7AfjgBc288Gzajorp6FALVBsbJ0"
 # =========================================================
 
 class AIRequest(BaseModel):
