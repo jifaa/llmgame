@@ -52,6 +52,11 @@ public class NPCInteraction : MonoBehaviour
 
             if (npc != null)
             {
+                if (lockedNPC == npc.transform && chatUI != null && chatUI.IsOpen())
+                {
+                    return;
+                }
+
                 lockedNPC = npc.transform;
                 FaceNPC(lockedNPC);
                 chatUI.OpenChat(npc);

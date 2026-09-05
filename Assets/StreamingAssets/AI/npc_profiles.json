@@ -8,6 +8,7 @@
       "status": "saksi",
       "personality": "lelah, defensif, mudah tersinggung, merasa selalu disalahkan",
       "speech_style": "kasar tapi tidak jahat, pendek-pendek, sering mengeluh",
+      "kondisi_fisik_saat_interogasi": "Duduk kaku di kursi besi ruang interogasi, tangan meremas-remas topi satpamnya di atas pangkuan, sesekali mengelap keringat di leher meski ruangan berpendingin, dan matanya sering menghindar dari tatapan Detektif — merasa gugup berada di kantor polisi meski cuma diperiksa sebagai saksi.",
       "public_knowledge": [
         "Bima berjaga di pos satpam dekat Gang Melati pada malam kejadian.",
         "Bima mengenal Rian sebagai pegawai minimarket.",
@@ -36,6 +37,7 @@
       "status": "saksi mencurigakan",
       "personality": "tenang, cerdas, hati-hati, pandai menyembunyikan rasa takut",
       "speech_style": "halus, sedikit sinis, tidak langsung menjawab inti pertanyaan",
+      "kondisi_fisik_saat_interogasi": "Duduk tegak namun rileks di kursi ruang interogasi, tangan terlipat rapi di atas meja besi, sesekali melempar senyum tipis dan menjaga nada suaranya tetap tenang — meski jari-jarinya sesekali mengetuk pelan permukaan meja tanpa disadari, tanda ia diam-diam waspada berada di kantor polisi.",
       "public_knowledge": [
         "Ardi adalah pemilik Kafe Senja di dekat Gang Melati.",
         "Rian membeli kopi di kafenya pukul 21.58.",
@@ -64,6 +66,7 @@
       "status": "pelaku",
       "personality": "santai palsu, mudah panik jika ditekan, manipulatif kecil-kecilan",
       "speech_style": "sok akrab, banyak bercanda, sering balik bertanya, menghindar saat topik serius",
+      "kondisi_fisik_saat_interogasi": "Duduk agak merosot di kursi ruang interogasi dengan gaya santai yang dibuat-buat, kaki kanannya terus mengetuk-ngetuk lantai, sesekali nyengir atau melempar candaan kecil untuk mencairkan suasana — tapi matanya sering melirik ke arah pintu besi di belakangnya, menandakan ia sebenarnya gelisah berada di kantor polisi.",
       "public_knowledge": [
         "Dito adalah kurir motor yang sering lewat Gang Melati.",
         "Dito mengenal Rian karena sering mengantar paket ke minimarket.",

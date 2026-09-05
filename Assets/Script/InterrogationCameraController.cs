@@ -115,6 +115,18 @@ public class InterrogationCameraController : MonoBehaviour
             if (brain != null || IsCharacter(npc) || IsCharacter(rootChar))
             {
                 Transform focusTarget = (brain != null) ? brain.transform : rootChar;
+
+                // JIKA SUDAH FOKUS PADA NPC YANG SAMA DAN CHAT SEDANG TERBUKA, JANGAN RISET CHAT
+                if (currentFocusedNPC == focusTarget && chatUI != null && chatUI.IsOpen())
+                {
+                    if (chatUI.inputField != null)
+                    {
+                        chatUI.inputField.Select();
+                        chatUI.inputField.ActivateInputField();
+                    }
+                    return;
+                }
+
                 FocusOnNPC(focusTarget);
 
                 // Munculkan panel

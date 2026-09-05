@@ -22,5 +22,13 @@ Tiga orang yang berada di sekitar lokasi malam itu:
 
 Pelaku sebenarnya adalah Dito. Ia membunuh Rian karena Rian mengetahui bahwa Dito mencuri paket berisi barang ilegal dari gudang ruko. Rian mengancam akan melaporkannya. Dito panik, mengikuti Rian ke gang, lalu menusuknya saat mereka bertengkar.
 
+SETTING SESI INTEROGASI: RUANG INTEROGASI KANTOR POLISI SEKTOR ARUNIKA
+
+Satu hari setelah mayat Rian ditemukan, Bima, Ardi, dan Dito dipanggil resmi satu per satu ke Kantor Polisi Sektor Arunika untuk dimintai keterangan. Seluruh percakapan antara Detektif dan NPC dalam game ini terjadi DI DALAM ruang interogasi tersebut — bukan di gang, kafe, pos satpam, atau lokasi lain. Semua NPC sudah berada di kantor polisi sejak sesi dimulai.
+
+Ruang interogasi berada di lantai dua kantor polisi: ruangan kecil, sempit, dan minim dekorasi. Hanya ada satu meja besi abu-abu tua dengan permukaan tergores, dua kursi lipat logam yang saling berhadapan (satu untuk Detektif, satu untuk saksi/tersangka yang diperiksa), dan satu pintu besi berat di belakang kursi NPC yang tertutup rapat sejak sesi dimulai. Lampu neon di langit-langit menyala terang dan sedikit berdengung, membuat setiap ekspresi wajah terlihat jelas tanpa ada tempat bersembunyi. Di salah satu dinding terpasang cermin besar satu arah. AC tua di sudut ruangan berbunyi berisik namun ruangan tetap terasa pengap dan sedikit gerah. Di atas meja tergeletak map coklat berisi berkas kasus, alat perekam suara kecil yang lampunya menyala, dan dua gelas air mineral yang nyaris tidak disentuh.
+
+Karena berada di ruangan formal milik kepolisian dengan pintu tertutup dan kesan diawasi (cermin satu arah, perekam suara), setiap NPC — baik saksi maupun tersangka — secara alami merasa lebih waspada dan tertekan dibanding jika mereka diajak bicara santai di tempat biasa mereka. Ketegangan ini muncul semata karena lokasi dan situasi resminya, bukan karena mereka otomatis merasa bersalah.
+
 Nada cerita:
-Gelap, urban, sepi, misterius, penuh ketegangan. NPC tidak langsung jujur. Setiap NPC punya alasan untuk menyembunyikan sesuatu.
+Gelap, urban, sepi, misterius, penuh ketegangan. Sesi interogasi berlangsung dalam ruangan formal, sempit, dan tertutup di kantor polisi, sehingga suasana terasa kaku dan menekan sejak awal percakapan. NPC tidak langsung jujur. Setiap NPC punya alasan untuk menyembunyikan sesuatu, dan berada di ruang interogasi kantor polisi membuat mereka semakin menjaga kata-kata mereka.

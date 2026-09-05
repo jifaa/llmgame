@@ -29,6 +29,10 @@ public class ChatUI : MonoBehaviour
     private string chatHistory = "";
     private bool isWaitingReply = false;
 
+    // Simpan riwayat chat dan dialog terakhir per karakter agar tidak hilang saat ganti/klik NPC
+    private readonly Dictionary<string, string> npcChatHistories = new Dictionary<string, string>();
+    private readonly Dictionary<string, string> npcLastDialogues = new Dictionary<string, string>();
+
     private readonly HashSet<string> greetingWords = new HashSet<string>
     {
         "halo", "hallo", "hai", "hei", "hello",
@@ -85,11 +89,30 @@ public class ChatUI : MonoBehaviour
     {
         if (chatPanel == null)
         {
-            GameObject p = GameObject.Find("ChatPanel");
-            chatPanel = p != null ? p : gameObject;
+            Transform tPanel = transform.Find("ChatPanel") ?? 
+                               transform.Find("Chat_Panel") ?? 
+                               transform.Find("InterrogationPanel") ?? 
+                               transform.Find("Panel");
+
+            if (tPanel != null)
+            {
+                chatPanel = tPanel.gameObject;
+            }
+            else
+            {
+                // Cari child pertama yang bukan tombol luar
+                foreach (Transform child in transform)
+                {
+                    if (child.name.StartsWith("Chat") || child.name.Contains("Panel"))
+                    {
+                        chatPanel = child.gameObject;
+                        break;
+                    }
+                }
+            }
         }
 
-        if (chatPanel == null) return;
+        if (chatPanel == null || chatPanel == gameObject) return;
 
         // 1. Cari ChatText
         if (chatText == null)
@@ -154,7 +177,7 @@ public class ChatUI : MonoBehaviour
 
     public bool IsOpen()
     {
-        return chatPanel != null && chatPanel.activeSelf;
+        return chatPanel != null && chatPanel != gameObject && chatPanel.activeSelf;
     }
 
     private string GetDisplayName(NPCBrainTest npc)
@@ -172,22 +195,48 @@ public class ChatUI : MonoBehaviour
 
     private string FormatNPCDialogue(string name, string text)
     {
-        return $"<color=#E0A838><b>[{name}]</b></color>\n{text}";
+        return $"<color=#F0B838><b>[{name}]</b></color>\n{text}";
     }
 
     public void OpenChat(NPCBrainTest npc)
     {
+        if (npc == null) return;
+
+        string npcKey = !string.IsNullOrEmpty(npc.npcId) ? npc.npcId.ToLower() : npc.gameObject.name.ToLower();
+        string displayName = GetDisplayName(npc);
+
+        // JIKA SUDAH BUKA CHAT DENGAN NPC YANG SAMA DAN SEDANG AKTIF, JANGAN RISET CHAT
+        if (currentNPC == npc && IsOpen())
+        {
+            if (inputField != null)
+            {
+                inputField.Select();
+                inputField.ActivateInputField();
+            }
+            return;
+        }
+
         currentNPC = npc;
-        chatHistory = "";
         isWaitingReply = false;
+
+        // Muat history per NPC jika pernah ngobrol sebelumnya
+        if (npcChatHistories.ContainsKey(npcKey))
+        {
+            chatHistory = npcChatHistories[npcKey];
+        }
+        else
+        {
+            chatHistory = "";
+        }
 
         AutoFindReferences();
 
-        string displayName = GetDisplayName(npc);
-        if (npc != null && string.IsNullOrEmpty(npc.npcName)) npc.npcName = displayName;
+        if (string.IsNullOrEmpty(npc.npcName)) npc.npcName = displayName;
 
         if (npcNameText != null)
-            npcNameText.text = displayName;
+        {
+            npcNameText.text = $"<color=#F0B838><b>● RUANG INTEROGASI</b></color>  <color=#6E7F94>│</color>  <color=#FFFFFF><b>Tersangka: {displayName}</b></color>";
+        }
 
         if (chatPanel != null)
             chatPanel.SetActive(true);
@@ -208,7 +257,15 @@ public class ChatUI : MonoBehaviour
             inputField.ActivateInputField();
         }
 
-        ShowNPCText(FormatNPCDialogue(displayName, "Ada yang ingin kamu tanyakan?"));
+        // Tampilkan dialog terakhir atau salam pembuka baru
+        if (npcLastDialogues.ContainsKey(npcKey) && !string.IsNullOrWhiteSpace(npcLastDialogues[npcKey]))
+        {
+            ShowNPCText(FormatNPCDialogue(displayName, npcLastDialogues[npcKey]));
+        }
+        else
+        {
+            ShowNPCText(FormatNPCDialogue(displayName, "Ada yang ingin kamu tanyakan padaku?"));
+        }
     }
 
     public void SendMessageToNPC()
@@ -239,6 +296,10 @@ public class ChatUI : MonoBehaviour
 
             chatHistory += "\nDetektif: " + playerMessage;
             chatHistory += "\n" + displayName + ": " + reply;
+
+            string key = !string.IsNullOrEmpty(currentNPC.npcId) ? currentNPC.npcId.ToLower() : currentNPC.gameObject.name.ToLower();
+            npcChatHistories[key] = chatHistory;
+            npcLastDialogues[key] = reply;
 
             return;
         }
@@ -291,6 +352,10 @@ public class ChatUI : MonoBehaviour
                 {
                     chatHistory = chatHistory.Substring(chatHistory.Length - 1200);
                 }
+
+                string key = !string.IsNullOrEmpty(npc.npcId) ? npc.npcId.ToLower() : npc.gameObject.name.ToLower();
+                npcChatHistories[key] = chatHistory;
+                npcLastDialogues[key] = cleanReply;
             }
         ));
 

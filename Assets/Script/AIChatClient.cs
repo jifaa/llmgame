@@ -10,12 +10,10 @@ public class AIChatClient : MonoBehaviour
     public AIDataLoader aiDataLoader;
 
     [Header("9Router / AI Endpoint Config")]
-    public string endpointUrl = "https://router.juan.web.id/v1/chat/completions";
-    public string modelName = "gemini-3.5-flash-lite";
-    public string apiKey = "sk-lXLUF8EM9A57JdgPiGdaN7AfjgBc288Gzajorp6FALVBsbJ0";
+    public string endpointUrl = "https://api.linstore.my.id/v1/chat/completions";
+    public string modelName = "qwen3.8-flash-free";
+    public string apiKey = "sk-scOmNEQX3RO1Z22jb5PaBTfPKtfYXZ5lJL30Ksj7sU8w0Pah";
 
-    // Backwards compatibility
-    public string serverUrl { get => endpointUrl; set => endpointUrl = value; }
 
     [Header("Player State")]
     [TextArea(3, 10)]
@@ -23,7 +21,27 @@ public class AIChatClient : MonoBehaviour
 
     void Awake()
     {
+        MigrateOldConfig();
         EnsureDataLoader();
+    }
+
+    void OnValidate()
+    {
+        MigrateOldConfig();
+    }
+
+    private void MigrateOldConfig()
+    {
+        if (endpointUrl != null && (endpointUrl.Contains("router.juan.web.id") || endpointUrl.Contains("localhost:8000")))
+        {
+            endpointUrl = "https://api.linstore.my.id/v1/chat/completions";
+            modelName = "qwen3.8-flash-free";
+            apiKey = "sk-scOmNEQX3RO1Z22jb5PaBTfPKtfYXZ5lJL30Ksj7sU8w0Pah";
+        }
+        else if (modelName == "deepseek-v4-flash-free")
+        {
+            modelName = "qwen3.8-flash-free";
+        }
     }
 
     private void EnsureDataLoader()
@@ -77,46 +95,30 @@ public class AIChatClient : MonoBehaviour
 
         Debug.Log($"[AIChatClient] Mengirim prompt ke AI untuk [{npc.npcName}]...");
 
-        string targetUrl = string.IsNullOrWhiteSpace(endpointUrl) ? "https://router.juan.web.id/v1/chat/completions" : endpointUrl.Trim();
+        string targetUrl = string.IsNullOrWhiteSpace(endpointUrl) ? "https://api.linstore.my.id/v1/chat/completions" : endpointUrl.Trim();
         if (targetUrl.EndsWith("/v1") || targetUrl.EndsWith("/v1/"))
         {
             targetUrl = targetUrl.TrimEnd('/') + "/chat/completions";
         }
-        bool isDirectOpenAI = targetUrl.Contains("/v1") || targetUrl.Contains("chat/completions");
+        // Format prompt jadi system context + user question untuk model AI
+        string systemPrompt = prompt;
+        systemPrompt = Regex.Replace(systemPrompt, @"\[PROSES ANALISIS INTERNAL NPC\].*?\[ATURAN OUTPUT DIALOG \(MUTLAK\)\]", "[ATURAN OUTPUT DIALOG (MUTLAK)]", RegexOptions.Singleline);
+        systemPrompt = Regex.Replace(systemPrompt, @"Sebelum merespons.*?tag <think>.*?</think>.*?merespons\?[)\s]*", "", RegexOptions.Singleline);
+        systemPrompt += "\n\nPENTING: Langsung tulis HANYA dialog responmu. JANGAN tulis analisis, pemikiran, atau penjelasan apa pun. Cukup 1-2 kalimat dialog saja.";
 
-        string jsonBody;
-        if (isDirectOpenAI)
+        var openAIPayload = new OpenAIChatRequest
         {
-            // Pisahkan prompt jadi system context + user question
-            // Hapus bagian <think> instruction dari prompt karena GLM punya reasoning bawaan
-            string systemPrompt = prompt;
-            
-            // Hapus instruksi <think> dari system prompt agar model tidak menulis analysis di content
-            systemPrompt = Regex.Replace(systemPrompt, @"\[PROSES ANALISIS INTERNAL NPC\].*?\[ATURAN OUTPUT DIALOG \(MUTLAK\)\]", "[ATURAN OUTPUT DIALOG (MUTLAK)]", RegexOptions.Singleline);
-            systemPrompt = Regex.Replace(systemPrompt, @"Sebelum merespons.*?tag <think>.*?</think>.*?merespons\?[)\s]*", "", RegexOptions.Singleline);
-            
-            // Tambahkan instruksi tegas di akhir
-            systemPrompt += "\n\nPENTING: Langsung tulis HANYA dialog responmu. JANGAN tulis analisis, pemikiran, atau penjelasan apa pun. Cukup 1-2 kalimat dialog saja.";
-
-            var openAIPayload = new OpenAIChatRequest
+            model = string.IsNullOrWhiteSpace(modelName) ? "qwen3.8-flash-free" : modelName,
+            temperature = 0.4f,
+            max_tokens = 300,
+            stream = false,
+            messages = new OpenAIMessage[]
             {
-                model = string.IsNullOrWhiteSpace(modelName) ? "gemini-3.5-flash-lite" : modelName,
-                temperature = 0.4f,
-                max_tokens = 300,
-                stream = false,
-                messages = new OpenAIMessage[]
-                {
-                    new OpenAIMessage { role = "system", content = systemPrompt },
-                    new OpenAIMessage { role = "user", content = playerMessage }
-                }
-            };
-            jsonBody = JsonUtility.ToJson(openAIPayload);
-        }
-        else
-        {
-            AIRequest requestData = new AIRequest { prompt = prompt };
-            jsonBody = JsonUtility.ToJson(requestData);
-        }
+                new OpenAIMessage { role = "system", content = systemPrompt },
+                new OpenAIMessage { role = "user", content = playerMessage }
+            }
+        };
+        string jsonBody = JsonUtility.ToJson(openAIPayload);
 
         byte[] bodyRaw = Encoding.UTF8.GetBytes(jsonBody);
 
@@ -236,28 +238,4 @@ public class OpenAIMessage
 {
     public string role;
     public string content;
-}
-
-[Serializable]
-public class OpenAIChatResponse
-{
-    public OpenAIChoice[] choices;
-}
-
-[Serializable]
-public class OpenAIChoice
-{
-    public OpenAIMessage message;
-}
-
-[Serializable]
-public class AIRequest
-{
-    public string prompt;
-}
-
-[Serializable]
-public class AIResponse
-{
-    public string reply;
-}
+}

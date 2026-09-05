@@ -108,15 +108,11 @@ public class MainMenuManager : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
 
         // Load scene permainan
-        if (Application.CanStreamedLevelBeLoaded(targetGameScene))
+        if (!Application.CanStreamedLevelBeLoaded(targetGameScene))
         {
-            SceneManager.LoadScene(targetGameScene);
+            Debug.LogWarning($"[MainMenu] Scene '{targetGameScene}' belum didaftarkan di Build Settings! Mencoba load...");
         }
-        else
-        {
-            Debug.LogWarning($"[MainMenu] Scene '{targetGameScene}' belum didaftarkan di Build Settings! Mencoba load langsung...");
-            SceneManager.LoadScene(targetGameScene);
-        }
+        SceneManager.LoadScene(targetGameScene);
     }
 
     public void QuitGame()

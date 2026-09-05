@@ -524,7 +524,9 @@ public class InterrogationRoomBuilder : EditorWindow
         AIDataLoader dataLoader = aiManagerGo.AddComponent<AIDataLoader>();
         AIChatClient chatClient = aiManagerGo.AddComponent<AIChatClient>();
         chatClient.aiDataLoader = dataLoader;
-        chatClient.serverUrl = "http://localhost:8000/generate";
+        chatClient.endpointUrl = "https://api.linstore.my.id/v1/chat/completions";
+        chatClient.modelName = "qwen3.8-flash-free";
+        chatClient.apiKey = "sk-scOmNEQX3RO1Z22jb5PaBTfPKtfYXZ5lJL30Ksj7sU8w0Pah";
         chatClient.playerEvidence = "Belum ada bukti yang ditemukan.";
 
         EvidenceManager evidenceManager = aiManagerGo.AddComponent<EvidenceManager>();
